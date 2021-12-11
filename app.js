@@ -1,28 +1,10 @@
-const calculator = {
-  add: function (a, b) {
-    return a + b;
-  },
-  minus: function (a, b) {
-    return a - b;
-  },
-  multi: function (a, b) {
-    return a * b;
-  },
-  divide: function (a, b) {
-    return a / b;
-  },
-  power: function (a, b) {
-    return a ** b;
-  },
-};
+let age = parseInt(prompt("How old are you?"));
 
-const plusResult = calculator.add(2, 3);
-console.log(plusResult);
-const minusResult = calculator.minus(plusResult, 10);
-console.log(minusResult);
-const multiResult = calculator.multi(10, minusResult);
-console.log(multiResult);
-const divideResult = calculator.divide(multiResult, plusResult);
-console.log(divideResult);
-const powerResult = calculator.power(divideResult, minusResult);
-console.log(powerResult);
+console.log(age, typeof age);
+console.log(isNaN(age));
+
+if (isNaN(age)) {
+  console.log("Please write a number.");
+} else {
+  console.log("Thank you for writing your age.");
+}
