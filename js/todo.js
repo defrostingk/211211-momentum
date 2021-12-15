@@ -51,3 +51,9 @@ if (savedToDos) {
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 }
+
+function sexFilter() {
+  return true;
+}
+
+[1, 2, 3, 4].filter(sexFilter);
