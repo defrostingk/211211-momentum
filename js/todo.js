@@ -1,11 +1,3 @@
-const toDoForm = document.querySelector("#todo-form");
-const toDoInput = toDoForm.querySelector("input");
-const toDoList = document.querySelector("#todo-list");
-
-const TODOS_KEY = "todos";
-
-let toDos = [];
-
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
