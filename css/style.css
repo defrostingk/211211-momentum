@@ -42,9 +42,10 @@ body {
 }
 
 #clock {
-  font-size: 100px;
   text-align: center;
+  font-size: 100px;
   width: 350px;
+  padding-bottom: 0px;
 }
 
 #greeting {
