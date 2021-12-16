@@ -8,29 +8,36 @@
     <title>Momentum App</title>
   </head>
   <body>
-    <div class="main-info">
+    <div class="main-screen">
       <h2 id="clock">00:00:00</h2>
-      <form id="login-form" class="hidden">
-        <input
-          required
-          maxlength="15"
-          type="text"
-          placeholder="What is your name?"
-        />
-        <input type="submit" value="Log In" />
-      </form>
-      <h1 id="greeting" class="hidden"></h1>
-      <form id="todo-form">
-        <input
-          type="text"
-          placeholder="Write a To Do and Press Enter"
-          required
-        />
-      </form>
-      <ul id="todo-list" class="hidden"></ul>
+      <div class="main-info">
+        <form id="login-form" class="hidden">
+          <input
+            class="login-form__id"
+            required
+            maxlength="15"
+            type="text"
+            placeholder="What is your name?"
+          />
+          <input class="login-form__btn" type="submit" value="Log In" />
+        </form>
+        <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <div class="todo-info">
+        <form id="todo-form">
+          <input
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+            required
+          />
+        </form>
+        <div class="todo-list-scroll">
+          <ul id="todo-list" class="hidden"></ul>
+        </div>
+      </div>
       <div id="quote">
-        <span></span>
-        <span></span>
+        <span class="quote__quote"></span>
+        <span class="quote__author"></span>
       </div>
     </div>
 
@@ -44,8 +51,9 @@
     </div>
 
     <form id="logout-form" class="hidden">
-      <input type="submit" value="Log Out" />
+      <input class="logout-form__btn" type="submit" value="Log Out" />
     </form>
+
     <script src="js/variables.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

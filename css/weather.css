@@ -1,0 +1,27 @@
+#weather {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weahter__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather__weather-icon,
+.weather__temp,
+.weather__weather-desc {
+  font-size: 25px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.weather__city {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-size: 15px;
+}

@@ -3,10 +3,17 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-  const li = event.target.parentElement;
+  const div = event.target.parentElement;
+  const li = div.parentElement;
   li.remove();
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   saveToDos();
+}
+
+function checkToDo(event) {
+  const div = event.target.parentElement;
+  const li = div.parentElement;
+  li.classList.toggle("todo-check");
 }
 
 function paintToDo(newToDoObj) {
@@ -14,11 +21,17 @@ function paintToDo(newToDoObj) {
   li.id = newToDoObj.id;
   const span = document.createElement("span");
   span.innerText = newToDoObj.text;
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const Btns = document.createElement("div");
+  const checkBtn = document.createElement("button");
+  checkBtn.innerText = "✔";
+  checkBtn.addEventListener("click", checkToDo);
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "❌";
+  deleteBtn.addEventListener("click", deleteToDo);
   li.appendChild(span);
-  li.appendChild(button);
+  Btns.appendChild(checkBtn);
+  Btns.appendChild(deleteBtn);
+  li.appendChild(Btns);
   toDoList.appendChild(li);
 }
 
@@ -29,6 +42,7 @@ function handleToDoSubmit(event) {
   const newToDoObj = {
     text: newToDo,
     id: Date.now(),
+    check: false,
   };
   toDos.push(newToDoObj);
   paintToDo(newToDoObj);

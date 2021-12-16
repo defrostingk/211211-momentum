@@ -1,2 +1,5 @@
 quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+
+if (todaysQuote.author !== "none") {
+  author.innerText = todaysQuote.author;
+}
